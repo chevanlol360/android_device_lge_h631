@@ -17,14 +17,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/h631/h631-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/c50/c50-vendor.mk)
 
 # NFC
 PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    NfcNci \
-    nfc_nci.pn54x.default \
-    Tag
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -38,4 +35,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 
 # common g4stylus
-$(call inherit-product, device/lge/g4stylus-common/g4stylus.mk)
+$(call inherit-product, device/lge/msm8916-common/c50.mk)
